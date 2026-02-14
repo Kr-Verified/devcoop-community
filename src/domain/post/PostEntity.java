@@ -12,7 +12,6 @@ public class PostEntity {
     private String content;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    private Long views;
 
 
     /**
@@ -21,7 +20,6 @@ public class PostEntity {
     public PostEntity() {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
-        this.views = 0L;
     }
 
     public PostEntity(Long postId, String username) {
@@ -65,10 +63,6 @@ public class PostEntity {
         return updatedAt;
     }
 
-    public Long getViews() {
-        return views;
-    }
-
 
     /**
      * Setter
@@ -95,9 +89,5 @@ public class PostEntity {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-    public void setViews(Long views) {
-        this.views = views;
     }
 }

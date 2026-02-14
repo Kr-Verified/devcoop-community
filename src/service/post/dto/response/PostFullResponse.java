@@ -10,10 +10,16 @@ public record PostFullResponse(
         String title,
         String content,
         LocalDateTime createdAt,
-        LocalDateTime updatedAt,
-        Long views
+        LocalDateTime updatedAt
 ) {
-    public static PostFullResponse of(PostEntity postEntity, ) {
-
+    public static PostFullResponse of(PostEntity postEntity) {
+        return new PostFullResponse(
+                postEntity.getPostId(),
+                postEntity.getUsername(),
+                postEntity.getTitle(),
+                postEntity.getContent(),
+                postEntity.getCreatedAt(),
+                postEntity.getUpdatedAt()
+        );
     }
 }
